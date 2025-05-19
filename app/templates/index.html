@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <title> Predict car prices </title>
+    <link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+<h1> Predict car prices </h1>
+<form id="car_info" method="post" action="/predict">
+    <label> Manufacturer
+        <input name="Manufacturer" type="text" required>
+    </label>
+    <label> Model
+        <input name="Model" type="text" required>
+    </label>
+    <label> Category
+        <input name="Category" type="text" required>
+    </label>
+    <label> Levy
+        <input name="Levy" type="number" required>
+    </label>
+    <label> Prod. year
+        <input name="Prod_year" type="number" required>
+    </label>
+    <label> Leather interior
+        <input name="Leather_interior" type="text" required>
+    </label>
+    <label> Fuel type
+        <input name="Fuel_type" type="text" required>
+    </label>
+    <label> Engine volume
+        <input name="Engine_volume" type="text" required>
+    </label>
+    <label> Mileage
+        <input name="Mileage" type="number" required>
+    </label>
+    <label> Cylinders
+        <input name="Cylinders" type="number" required>
+    </label>
+    <label> Gear box type
+        <input name="Gear_box_type" type="text" required>
+    </label>
+    <label> Drive wheels
+        <input name="Drive_wheels" type="text" required>
+    </label>
+    <label> Doors
+        <input name="Doors" type="number" required>
+    </label>
+    <label> Wheel
+        <input name="Wheel" type="text" required>
+    </label>
+    <label> Color
+        <input name="Color" type="text" required>
+    </label>
+    <label> Airbags
+        <input name="Airbags" type="number" required>
+    </label>
+    <button type="submit">
+        Predict
+    </button>
+</form>
+{% if prediction %}
+            <div class="result">
+                <h1>Predicted Price: {{ prediction }}</h1>
+            </div>
+        {% endif %}
+</body>
+</html>

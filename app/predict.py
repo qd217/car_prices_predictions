@@ -2,12 +2,6 @@
 
 import joblib
 import pandas as pd
-from sklearn.preprocessing import OrdinalEncoder, LabelEncoder
-import category_encoders as ce
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.preprocessing import StandardScaler, LabelEncoder
-import xgboost as xgb
 
 def processing(Levy, Manufacturer, Model, Prod_year, Category, Leather_interior, Fuel_type, Engine_volume, Mileage, Cylinders, Gear_box_type, Drive_wheels, Doors, Wheel, Color, Airbags):
   # Формируем df по входным данным
@@ -33,9 +27,9 @@ def processing(Levy, Manufacturer, Model, Prod_year, Category, Leather_interior,
   data = pd.DataFrame(data)
 
   # Загружаем энкодеры
-  ordinal_encoder = joblib.load('app/for_model/ordinal_encoder.pkl')
-  target_encoder = joblib.load('app/for_model/target_encoder.pkl')
-  nominal_encoder = joblib.load('app/for_model/nominal_encoder.pkl')
+  ordinal_encoder = joblib.load('for_model/ordinal_encoder.pkl')
+  target_encoder = joblib.load('for_model/target_encoder.pkl')
+  nominal_encoder = joblib.load('for_model/nominal_encoder.pkl')
 
   # Обрабатываем признаки
   ordinal_columns = ['Gear box type', 'Cylinders'] # Порядковые значения
@@ -83,7 +77,7 @@ def processing(Levy, Manufacturer, Model, Prod_year, Category, Leather_interior,
   data['Airbags'] = data['Airbags'].astype('int64')
 
   # Загружаем модель и получаем предсказание
-  model = joblib.load('app/for_model/xgb_model.pkl')
+  model = joblib.load('for_model/xgb_model.pkl')
   prediction = model.predict(data)
 
   return prediction

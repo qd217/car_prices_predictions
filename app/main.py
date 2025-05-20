@@ -18,9 +18,9 @@ async def home(request: Request):
 @app.post("/predict", response_class=HTMLResponse)
 async def predict_view(
     request: Request,
-    car_input: CarInput = Depends()
+    car_input: CarInput = Depends(CarInput.as_form),
 ):
-    prediction = processing(**car_input.dict()) # {"Levy" : 123}
+    prediction = processing(**car_input.model_dump()) # {"Levy" : 123}
 
     '''prediction = processing(Levy, Manufacturer, Model, Prod_year, Category, Leather_interior,
                             Fuel_type, Engine_volume, Mileage, Cylinders, Gear_box_type,
@@ -30,6 +30,3 @@ async def predict_view(
         "request": request,
         "prediction": round(prediction[0],0)
     })
-
-#if __name__ == '__main__': # Запуск unicorn
-#    uvicorn.run('main:app', reload = True)

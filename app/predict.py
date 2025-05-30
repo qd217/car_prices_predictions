@@ -1,9 +1,10 @@
-# Функция в проект
-
 import joblib
 import pandas as pd
 
 def processing(Levy, Manufacturer, Model, Prod_year, Category, Leather_interior, Fuel_type, Engine_volume, Mileage, Cylinders, Gear_box_type, Drive_wheels, Doors, Wheel, Color, Airbags):
+  '''
+  Логика модели
+  '''
   # Формируем df по входным данным
   data = {
         'Levy': [Levy],

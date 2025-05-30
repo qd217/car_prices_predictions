@@ -1,24 +1,23 @@
-from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base, Mapped, mapped_column
 from dotenv import dotenv_values
 
-config = dotenv_values("../.env")
+config = dotenv_values(".env") # Чтение файла .env
 
-# Параметры подключения к PostgreSQL
-db_url = f"postgresql://{config['POSTGRES_USER']}:{config['POSTGRES_PASSWORD']}@postgresql:5432/{config['POSTGRES_DB']}"
+db_url = f"postgresql://{config['POSTGRES_USER']}:{config['POSTGRES_PASSWORD']}@postgresql:5432/{config['POSTGRES_DB']}" # Параметры подключения к PostgreSQL
 
-# Создание движка
-engine = create_engine(db_url)
+engine = create_engine(db_url) # Создание движка
 
-# Сессия для запросов
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine) # Сессия для запросов (класс)
 
-# Конструкция SQLAlchemy ORM для работы с базами данных через Python-классы
-Base = declarative_base()
+session = SessionLocal() # Создание сессии подключения к базе данных
 
-# Модель для хранения введенных данных
+Base = declarative_base() # Конструкция SQLAlchemy ORM для работы с базами данных через Python-классы
+
 class UserCarInput(Base):
+    '''
+    Модель/таблица для хранения введенных данных
+    '''
     __tablename__ = "user_car_inputs"
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
@@ -40,5 +39,4 @@ class UserCarInput(Base):
     airbags: Mapped[int] = mapped_column(nullable=True)
     result: Mapped[int] = mapped_column(nullable=True)
 
-# Создение таблицы
-Base.metadata.create_all(engine)
+Base.metadata.create_all(engine) # Создение таблицы

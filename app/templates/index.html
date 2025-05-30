@@ -6,56 +6,79 @@
     <link rel="stylesheet" href="/static/styles.css"/>
 </head>
 <body>
-<h1> Predict car prices </h1>
+    <header class="header">
+        <h1 class="top">Predict car prices</h1>
+        <a href="/history" target="_blank" class="history-btn">
+            <button type="button">Query History</button>
+        </a>
+    </header>
 <form id="car_info" method="post" action="/predict" enctype="application/x-www-form-urlencoded">
-    <label> Manufacturer
-        <input name="Manufacturer" type="text" required>
-    </label>
-    <label> Model
-        <input name="Model" type="text" required>
-    </label>
-    <label> Category
-        <input name="Category" type="text" required>
-    </label>
-    <label> Levy
-        <input name="Levy" type="number" required>
-    </label>
-    <label> Prod. year
-        <input name="Prod_year" type="number" required>
-    </label>
-    <label> Leather interior
-        <input name="Leather_interior" type="text" required>
-    </label>
-    <label> Fuel type
-        <input name="Fuel_type" type="text" required>
-    </label>
-    <label> Engine volume
-        <input name="Engine_volume" type="text" required>
-    </label>
-    <label> Mileage
-        <input name="Mileage" type="number" required>
-    </label>
-    <label> Cylinders
-        <input name="Cylinders" type="number" required>
-    </label>
-    <label> Gear box type
-        <input name="Gear_box_type" type="text" required>
-    </label>
-    <label> Drive wheels
-        <input name="Drive_wheels" type="text" required>
-    </label>
-    <label> Doors
-        <input name="Doors" type="number" required>
-    </label>
-    <label> Wheel
-        <input name="Wheel" type="text" required>
-    </label>
-    <label> Color
-        <input name="Color" type="text" required>
-    </label>
-    <label> Airbags
-        <input name="Airbags" type="number" required>
-    </label>
+    <table class="table-pred">
+      <tr>
+        <td><label for="Manufacturer">Manufacturer</label></td>
+        <td><input name="Manufacturer" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Model">Model</label></td>
+        <td><input name="Model" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Category">Category</label></td>
+        <td><input name="Category" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Levy">Levy</label></td>
+        <td><input name="Levy" type="number" required></td>
+      </tr>
+      <tr>
+        <td><label for="Prod_year">Prod. year</label></td>
+        <td><input name="Prod_year" type="number" required></td>
+      </tr>
+      <tr>
+        <td><label for="Leather_interior">Leather interior</label></td>
+        <td><input name="Leather_interior" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Fuel_type">Fuel type</label></td>
+        <td><input name="Fuel_type" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Engine_volume">Engine volume</label></td>
+        <td><input name="Engine_volume" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Mileage">Mileage</label></td>
+        <td><input name="Mileage" type="number" required></td>
+      </tr>
+      <tr>
+        <td><label for="Cylinders">Cylinders</label></td>
+        <td><input name="Cylinders" type="number" required></td>
+      </tr>
+      <tr>
+        <td><label for="Gear_box_type">Gear box type</label></td>
+        <td><input name="Gear_box_type" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Drive_wheels">Drive wheels</label></td>
+        <td><input name="Drive_wheels" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Doors">Doors</label></td>
+        <td><input name="Doors" type="number" required></td>
+      </tr>
+      <tr>
+        <td><label for="Wheel">Wheel</label></td>
+        <td><input name="Wheel" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Color">Color</label></td>
+        <td><input name="Color" type="text" required></td>
+      </tr>
+      <tr>
+        <td><label for="Airbags">Airbags</label></td>
+        <td><input name="Airbags" type="number" required></td>
+      </tr>
+    </table>
     <button type="submit">
         Predict
     </button>

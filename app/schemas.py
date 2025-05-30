@@ -1,9 +1,10 @@
 from pydantic import BaseModel
-
 from fastapi import Form
 
-
 class CarInput(BaseModel):
+    '''
+    Создаётся Pydantic-модель для корректного заполнения данных
+    '''
     Levy: int
     Manufacturer: str
     Model: str
@@ -41,6 +42,9 @@ class CarInput(BaseModel):
         Color: str            = Form(...),
         Airbags: int          = Form(...),
     ) -> "CarInput":
+        '''
+        Для приема данных из HTML-формы, т.к. FastAPI по умолчанию принимает JSON в теле POST-запросов.
+        '''
         return cls(
             Levy=Levy,
             Manufacturer=Manufacturer,

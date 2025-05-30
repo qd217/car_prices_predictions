@@ -1,69 +1,124 @@
+/* Импорт шрифта Roboto с разными начертаниями и толщинами */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Задаёт блочный flex-контейнер для формы */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    display: flex; /* Использовать flex-контейнер */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    gap: 4px; /* Отступ между элементами 4 пикселя */
 }
 
+/* Стилизация заголовка h1 */
 h1 {
-    font-family: 'Roboto';
-    font-weight: 800;
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    font-family: 'Roboto'; /* Шрифт Roboto */
+    font-weight: 800; /* Очень жирный текст */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 20px; /* Отступ снизу 20 пикселей */
+    font-size: 24px; /* Размер шрифта */
+    color: #333; /* Цвет текста — тёмно-серый */
 }
 
+/* Стилизация подписи (label) для формы */
 label {
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 6px;
-    text-align: center;
+    font-family: 'Roboto'; /* Шрифт Roboto */
+    font-weight: 500; /* Средняя толщина шрифта */
+    font-size: 14px; /* Размер шрифта 14 пикселей */
+    margin-bottom: 6px; /* Отступ снизу 6 пикселей */
+    text-align: center; /* Выравнивание текста по центру */
 }
 
+/* Стилизация полей ввода */
 input {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 16px;
-    font-size: 14px;
-    text-align: center;
+    padding: 8px 10px;         /* Внутренние отступы сверху/снизу 8px, слева/справа 10px */
+    border: 1px solid #ccc;    /* Граница толщиной 1px светло-серого цвета */
+    border-radius: 16px;       /* Закругление углов радиусом 16px */
+    font-size: 14px;           /* Размер шрифта 14 пикселей */
+    text-align: center;        /* Текст в поле выравнивается по центру */
 }
 
+/* Стили для параграфов */
 p {
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 18px;
+    font-family: 'Roboto';     /* Шрифт Roboto */
+    font-weight: 400;          /* Обычный вес шрифта */
+    font-size: 18px;           /* Размер шрифта 18 пикселей */
 }
-
+/* Стилизация кнопок */
 button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    width: fit-content;
-    align-self: center;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px;        /* Внутренние отступы: сверху/снизу 10px, слева/справа 20px */
+    background-color: #007bff; /* Синий фон кнопки */
+    color: white;              /* Белый цвет текста */
+    border: none;              /* Без рамки */
+    border-radius: 16px;       /* Закругление углов радиусом 16px */
+    cursor: pointer;           /* Курсор в виде руки при наведении */
+    font-weight: 600;          /* Полужирный шрифт */
+    font-size: 14px;           /* Размер шрифта 14 пикселей */
+    width: fit-content;        /* Ширина по содержимому */
+    align-self: center;        /* Центрирование кнопки внутри flex-контейнера */
+    margin-top: 10px;          /* Отступ сверху 10 пикселей */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
 }
 
+/* Изменение цвета фона кнопки при наведении */
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Более тёмный синий фон */
 }
 
+/* Стилизация фона для body */
 body {
     background:
-        linear-gradient(to bottom, rgba(204, 238, 255, 0.7), rgba(255, 255, 255, 0.7)),
-        url('background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+        linear-gradient(to bottom, rgba(204, 238, 255, 0.7), rgba(255, 255, 255, 0.7)), /* Полупрозрачный градиент сверху вниз */
+        url('background.jpg'); /* Фоновое изображение */
+    background-size: cover; /* Фон масштабируется, чтобы покрыть всю область */
+    background-repeat: no-repeat; /* Фон не повторяется */
+    background-position: center; /* Фон выравнивается по центру */
 }
 
+/* Стилизация таблицы */
+table {
+    width: 100%; /* Ширина таблицы занимает всю доступную ширину */
+    border-collapse: collapse; /* Убирает промежутки между ячейками */
+    margin-top: 20px; /* Отступ сверху 20 пикселей */
+}
 
+/* Стилизация ячеек таблицы (заголовков и данных) */
+th, td {
+    border: 1px solid #aaa; /* Серые рамки толщиной 1px */
+    padding: 8px; /* Внутренний отступ 8 пикселей */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Стилизация заголовков таблицы */
+th {
+    background-color: #f2f2f2; /* Светло-серый фон */
+}
+
+/* Контейнер с выравниванием элементов по центру и отступами */
+.header {
+    display: flex; /* Flex-контейнер */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+    gap: 20px; /* Отступ между элементами 20 пикселей */
+}
+
+/* Кнопка истории с абсолютным позиционированием справа */
+.history-btn {
+    position: absolute; /* Абсолютное позиционирование */
+    right: 10px; /* Отступ справа 10 пикселей */
+}
+
+/* Стилизация таблицы с предсказаниями */
+.table-pred {
+    padding: 2px 5px; /* Внутренние отступы: сверху/снизу 2px, слева/справа 5px */
+    font-size: 14px; /* Размер шрифта 14 пикселей */
+    white-space: nowrap; /* Запрещает перенос текста на новую строку */
+    width: auto; /* Ширина по содержимому */
+    height: 20px; /* Высота ячейки 20 пикселей */
+    margin: 0 auto; /* Автоматические отступы слева и справа для центрирования */
+}
+
+/* Убирает границы и запрещает перенос текста в ячейках таблицы предсказаний */
+.table-pred td,
+.table-pred th {
+    border: none; /* Без рамок */
+    white-space: nowrap; /* Запрещает перенос текста */
+}
